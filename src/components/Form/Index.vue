@@ -7,6 +7,7 @@
       v-maska="'a* a* a* a*'"
       maxlength="36"
       :validator="v$.cardDetails.name"
+      autocomplete="cc-name"
     >
       Cardholder Name
     </Field>
@@ -20,6 +21,7 @@
       inputMode="numeric"
       maxlength="19"
       :validator="v$.cardDetails.number"
+      autocomplete="cc-number"
     >
       Card Number
     </Field>
@@ -36,6 +38,7 @@
             inputMode="numeric"
             maxlength="2"
             :class="{ hasErrors: v$.cardDetails.expiryMonth.$errors.length }"
+            autocomplete="cc-exp-month"
           >
           </Field>
 
@@ -47,6 +50,7 @@
             inputMode="numeric"
             maxlength="2"
             :class="{ hasErrors: v$.cardDetails.expiryYear.$errors.length }"
+            autocomplete="cc-exp-year"
           >
           </Field>
         </div>
@@ -67,6 +71,7 @@
           inputMode="numeric"
           maxlength="3"
           :validator="v$.cardDetails.cvc"
+          autocomplete="cc-csc"
         >
         </Field>
       </div>
