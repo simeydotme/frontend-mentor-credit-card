@@ -106,7 +106,7 @@ export default {
     },
   },
   methods: {
-    handleSubmit(e) {
+    handleSubmit() {
       console.log("submit");
       this.v$.cardDetails.$touch();
       cardErrors.value = this.v$.cardDetails.$error;

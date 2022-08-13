@@ -45,12 +45,12 @@ export default {
   props: { submitted: Boolean },
   computed: {},
   watch: {
-    async cardType(type, oldType) {
+    async cardType() {
       this.animate = "";
       await nextTick();
       this.animate = "animate__animated animate__faster animate__pulse";
     },
-    async submitted(submitted, oldType) {
+    async submitted() {
       this.animate = "";
       await nextTick();
       if (cardSuccess.value) {

@@ -48,7 +48,7 @@ main {
 }
 .cards {
   background: var(--purple);
-  background-image: url("img/bg-main-mobile.png");
+  background-image: url("/img/bg-main-mobile.png");
   background-size: cover;
   background-position: center;
   min-height: 250px;
@@ -70,7 +70,7 @@ main {
     position: relative;
     top: 0;
     grid-column: 1 / span 1;
-    background-image: url("img/bg-main-desktop.png");
+    background-image: url("/img/bg-main-desktop.png");
   }
   .details {
     grid-column: 3 / span 1;
