@@ -1,7 +1,10 @@
 <template>
   <aside class="card-front" :class="[cardType]">
     <div class="animater" :class="[animate]">
-      <div class="icon" v-html="icon" />
+      <LazyImage
+        path="https://res.cloudinary.com/simey/image/upload/v1660404010/Dev/credit-card/card-logo.svg"
+        class="icon"
+      />
       <label class="number" for="cardNumber">{{ cardNumber }}</label>
       <label class="name" for="cardHolder">{{ cardName }}</label>
       <label class="expiry" for="expiryMonth">{{ cardExpiry }}</label>
@@ -22,7 +25,6 @@ import {
   cardSuccess,
   cardErrors,
 } from "../../stores/card.js";
-import icon from "../../assets/card-logo.svg";
 import LazyImage from "../Global/LazyImage.vue";
 
 export default {
@@ -37,7 +39,6 @@ export default {
       cardType,
       cardSuccess,
       cardErrors,
-      icon,
       animate: "",
     };
   },
@@ -73,7 +74,7 @@ export default {
 
 .animater {
   background-color: slategrey;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/gradients/default.jpg");
+  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/default.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -105,15 +106,15 @@ export default {
 
 .card-front.visa .animater {
   background-color: #2f68e3;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/gradients/visa.jpg");
+  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/visa.jpg");
 }
 .card-front.master .animater {
   background-color: #f4dfb2;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/gradients/master.jpg");
+  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/master.jpg");
 }
 .card-front.amex .animater {
   background-color: #61c6f5;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/gradients/amex.jpg");
+  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/amex.jpg");
 }
 
 .icon {

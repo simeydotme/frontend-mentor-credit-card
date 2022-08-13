@@ -1,6 +1,10 @@
 <template>
   <section class="complete">
     <div class="icon" v-html="icon"></div>
+    <LazyImage
+      path="https://res.cloudinary.com/simey/image/upload/v1660404012/Dev/credit-card/icon-complete.svg"
+      class="icon"
+    />
     <h2>Thank you!</h2>
     <p>We've added your card details</p>
     <button type="button" @click="handleContinue">Continue</button>
@@ -10,14 +14,11 @@
 
 
 <script>
-import icon from "../../assets/icon-complete.svg";
 import { cardReset } from "../../stores/card.js";
+import LazyImage from "../Global/LazyImage.vue";
 export default {
-  data() {
-    return {
-      icon,
-    };
-  },
+  components: { LazyImage },
+
   methods: {
     handleContinue() {
       console.log(cardReset);
