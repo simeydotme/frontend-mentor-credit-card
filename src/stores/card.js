@@ -49,7 +49,7 @@ export const cardType = computed(() => {
 });
 
 export const cardLogo = computed(() => {
-  return `https://res.cloudinary.com/simey/image/upload/c_scale,h_200/Dev/gradients/${cardType.value}-logo.png`;
+  return `https://res.cloudinary.com/simey/image/upload/c_scale,h_200/Dev/credit-card/${cardType.value}-logo.png`;
 });
 
 export const cardErrors = ref(true);
