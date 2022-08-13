@@ -100,6 +100,10 @@ form {
 .field input::placeholder {
   color: var(--dark);
 }
+.field input:hover {
+  border-color: var(--primary1);
+}
+.field input:active,
 .field input:focus {
   border: 1px solid var(--primary2);
   outline: 1px solid var(--primary1);
@@ -130,5 +134,13 @@ button {
   border-radius: 6px;
   display: block;
   width: 100%;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+button:focus,
+button:active {
+  opacity: 0.8;
+  background: var(--purple);
 }
 </style>
