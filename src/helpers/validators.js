@@ -12,7 +12,11 @@ const validators = {
     required: helpers.withMessage("Enter a Card Holder name", required),
     minLength: minLength(2)
   },
-  number: {
+  numberAmex: {
+    required: helpers.withMessage("Enter a Credit Card number", required),
+    minLength: helpers.withMessage("Must be 15 digits long", minLength(15))
+  },
+  numberNormal: {
     required: helpers.withMessage("Enter a Credit Card number", required),
     minLength: helpers.withMessage("Must be 16 digits long", minLength(16))
   },

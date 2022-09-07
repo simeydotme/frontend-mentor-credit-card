@@ -125,6 +125,11 @@ export default {
     },
   },
   validations() {
+    if (cardType.value === "amex") {
+      validators.number = validators.numberAmex;
+    } else {
+      validators.number = validators.numberNormal;
+    }
     return {
       // the "cardDetails" object below matches the
       // data() object, allowing the validation library to
