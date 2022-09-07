@@ -39,9 +39,9 @@ export const cardName = computed(() => {
 });
 
 export const cardType = computed(() => {
-  const isMaster = cardDetails.number.startsWith(5);
   const isVisa = cardDetails.number.startsWith(4);
-  const isAmex = cardDetails.number.startsWith(1);
+  const isMaster = cardDetails.number.match(/^5[1-5]/);
+  const isAmex = !!cardDetails.number.match(/^3[47]/);
   if (isMaster) return "master";
   else if (isVisa) return "visa";
   else if (isAmex) return "amex";

@@ -17,7 +17,7 @@
       name="cardNumber"
       placeholder="e.g. 1234 5678 9123 0000"
       pattern="[0-9 ]*"
-      v-maska="'#### #### #### ####'"
+      v-maska="cardMask"
       inputMode="numeric"
       maxlength="19"
       :validator="v$.cardDetails.number"
@@ -83,7 +83,7 @@
 
 <script>
 import Field from "./Field.vue";
-import { cardDetails, cardErrors } from "../../stores/card.js";
+import { cardDetails, cardErrors, cardType } from "../../stores/card.js";
 import { mask } from "maska";
 import { validators, groups } from "../../helpers/validators.js";
 import useVuelidate from "@vuelidate/core";
@@ -96,14 +96,20 @@ export default {
     return { v$: useVuelidate({ $lazy: true }) };
   },
   data() {
-    return { cardDetails, cardErrors };
+    return { cardDetails, cardErrors, cardType };
   },
   props: {},
   emits: ["submit"],
   computed: {
+    cardMask() {
+      if (cardType.value === "amex") {
+        return "#### ###### #####";
+      }
+      return "#### #### #### ####";
+    },
     cardNumber: {
       get() {
-        return mask(cardDetails.number, "#### #### #### ####");
+        return mask(cardDetails.number, this.cardMask);
       },
       set(v) {
         cardDetails.number = v.replace(/\s+/g, "");
