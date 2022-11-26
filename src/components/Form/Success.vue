@@ -2,7 +2,7 @@
   <section class="complete">
     <div class="icon" v-html="icon"></div>
     <LazyImage
-      path="https://res.cloudinary.com/simey/image/upload/v1660404012/Dev/credit-card/icon-complete.svg"
+      path="/img/icon-complete.svg"
       class="icon"
     />
     <h2>Thank you!</h2>

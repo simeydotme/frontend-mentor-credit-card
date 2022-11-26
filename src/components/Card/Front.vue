@@ -2,7 +2,7 @@
   <aside class="card-front" :class="[cardType]">
     <div class="animater" :class="[animate]">
       <LazyImage
-        path="https://res.cloudinary.com/simey/image/upload/v1660404010/Dev/credit-card/card-logo.svg"
+        path="/img/card-logo.svg"
         class="icon"
       />
       <label class="number" for="cardNumber">{{ cardNumber }}</label>
@@ -74,7 +74,7 @@ export default {
 
 .animater {
   background-color: slategrey;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/default.jpg");
+  background-image: url("/img/bgs/default.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -106,15 +106,15 @@ export default {
 
 .card-front.visa .animater {
   background-color: #2f68e3;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/visa.jpg");
+  background-image: url("/img/bgs/visa.jpg");
 }
 .card-front.master .animater {
   background-color: #f4dfb2;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/master.jpg");
+  background-image: url("/img/bgs/master.jpg");
 }
 .card-front.amex .animater {
   background-color: #61c6f5;
-  background-image: url("https://res.cloudinary.com/simey/image/upload/c_scale,w_900/Dev/credit-card/amex.jpg");
+  background-image: url("/img/bgs/amex.jpg");
 }
 
 .icon {
